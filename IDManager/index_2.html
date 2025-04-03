@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>아이디 관리 앱</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="login-signup-container">
+        <h2>로그인 / 회원가입</h2>
+        <input type="text" id="username" placeholder="사용자 이름">
+        <input type="password" id="password" placeholder="비밀번호">
+        <button id="login-btn">로그인</button>
+        <button id="signup-btn">회원가입</button>
+        <p id="login-message"></p>
+        <button id="user-list-btn" style="display: none;">등록 사용자 목록</button>
+    </div>
+    <div id="input-container" style="display: none;">
+        </div>
+    <div id="list-container" style="display: none;">
+        </div>
+    <div id="user-list-container" style="display: none;">
+        <h2>등록 사용자 목록</h2>
+        <table id="user-table">
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>사용자 이름</th>
+                    <th>선택</th>
+                </tr>
+            </thead>
+            <tbody id="user-list"></tbody>
+        </table>
+        <button id="edit-user-btn">사용자 수정</button>
+        <button id="delete-user-btn">사용자 삭제</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
