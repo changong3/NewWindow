@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>아이디 관리 앱</title>
+  <link rel="stylesheet" href="js/script.js">
+</head>
+
+<body>
+  <div id="login-signup-container">
+    <h2>로그인 / 회원가입</h2>
+    <input type="text" id="username" placeholder="사용자 이름">
+    <input type="password" id="password" aceholder="비밀번호">
+    <button id="login-btn">로그인</button>
+    <button id="signup-btn">회원가입</button>
+    <p id="login-message"></p>
+    <button id="user-list-btn" style="display: none;">등록 사용자 목록</button>
+  </div>
+  <div id="input-container" style="display: none;">
+    <h2>아이디 입력</h2>
+    <input type="text" id="companyName" placeholder="회사명">
+    <input type="text" id="siteName" placeholder="사이트명">
+    <input type="text" id="userId" placeholder="아이디">
+    <input type="password" id="userPw" placeholder="비밀번호">
+    <textarea id="memo" placeholder="메모"></textarea>
+    <button id="save-btn">저장</button>
+    <button id="cancel-btn">취소</button>
+  </div>
+  <div id="list-container" style="display: none;">
+    <h2>아이디 목록</h2>
+    <table id="id-table">
+      <thead>
+        <tr>
+          <th>번호</th>
+          <th>회사명</th>
+          <th>사이트명</th>
+          <th>아이디</th>
+          <th>비밀번호</th>
+          <th>선택</th>
+        </tr>
+      </thead>
+      <tbody id="id-list"></tbody>
+    </table>
+    <button id="add-btn">아이디 추가</button>
+    <button id="edit-btn">아이디 수정</button>
+    <button id="delete-btn">아이디 삭제</button>
+  </div>
+  <div id="user-list-container" style="display: none;">
+    <h2>등록 사용자 목록</h2>
+    <table id="user-table">
+      <thead>
+        <tr>
+          <th>번호</th>
+          <th>사용자 이름</th>
+          <th>아이디</th>
+          <th>비밀번호</th>
+          <th>선택</th>
+        </tr>
+      </thead>
+      <tbody id="user-list"></tbody>
+    </table>
+    <button id="edit-user-btn">사용자 수정</button>
+    <button id="delete-user-btn">사용자 삭제</button>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
