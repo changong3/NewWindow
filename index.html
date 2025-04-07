@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My PWA App</title>
     <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4CAF50">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="apple-touch-icon" href="icon-192x192.png">
     <style>
         body {
             margin: 0;
@@ -65,10 +69,16 @@
             color: red;
             text-align: center;
         }
+        #install-btn {
+            display: none;
+            margin: 10px auto;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
     <h1>Welcome to My PWA App!</h1>
+    <button id="install-btn">앱 설치하기</button>
 
     <div id="usage-time-setting">
         <h2>사용 시간 설정</h2>

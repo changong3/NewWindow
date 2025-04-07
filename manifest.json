@@ -1,25 +1,38 @@
 {
-  "name": "My PWA App",
-  "short_name": "PWA App",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#4CAF50",
-  "icons": [
-    {
-      "src": "icon-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "icon-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ]
-}
-{
-  "web_accessible_resources": [
-    "tutorial.html"
-  ]
+    "name": "My PWA App",
+    "short_name": "PWA App",
+    "description": "A simple PWA for managing IDs and users",
+    "id": "/index.html",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#f8f8f8",
+    "theme_color": "#4CAF50",
+    "icons": [
+        {
+            "src": "icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "screenshot-wide.png",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "form_factor": "wide",
+            "label": "My PWA App on Desktop"
+        },
+        {
+            "src": "screenshot-narrow.png",
+            "sizes": "720x1280",
+            "type": "image/png",
+            "form_factor": "narrow",
+            "label": "My PWA App on Mobile"
+        }
+    ]
 }

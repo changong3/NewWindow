@@ -20,12 +20,36 @@ let startTime = null;
 let elapsedTime = localStorage.getItem('elapsedTime') ? parseInt(localStorage.getItem('elapsedTime')) : 0;
 let intervalId = null;
 
+// PWA 설치 프롬프트 변수
+let deferredPrompt;
+
 // Service Worker 등록
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('service_worker.js')
         .then(registration => console.log('Service worker registration successful:', registration))
         .catch(error => console.log('Service worker registration failed:', error));
 }
+
+// PWA 설치 가능 이벤트 감지
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    // 설치 버튼 표시
+    const installBtn = document.getElementById('install-btn');
+    installBtn.style.display = 'block';
+    installBtn.addEventListener('click', () => {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+                console.log('User accepted the install prompt');
+            } else {
+                console.log('User dismissed the install prompt');
+            }
+            deferredPrompt = null;
+            installBtn.style.display = 'none';
+        });
+    });
+});
 
 // DOM 로드 완료 시 실행
 document.addEventListener("DOMContentLoaded", () => {
