@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My PWA App</title>
+    <link rel="manifest" href="manifest.json">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        input, textarea {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 10px auto;
+            padding: 8px;
+            font-size: 14px;
+        }
+        table {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        #usage-time-setting, #usage-time-display {
+            text-align: center;
+            margin: 20px 0;
+        }
+        #login-signup-container, #input-container, #list-container, #user-list-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        #login-message {
+            color: red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My PWA App!</h1>
+
+    <div id="usage-time-setting">
+        <h2>사용 시간 설정</h2>
+        <label for="timeSetting">시간 (분):</label>
+        <input type="number" id="timeSetting" min="1" value="0">
+        <button id="setTime">설정</button>
+        <div id="usage-time-display"></div>
+    </div>
+
+    <div id="login-signup-container">
+        <h2>로그인 / 회원가입</h2>
+        <input type="text" id="username" placeholder="사용자 이름">
+        <input type="password" id="password" placeholder="비밀번호">
+        <button id="login-btn">로그인</button>
+        <button id="signup-btn">회원가입</button>
+        <p id="login-message"></p>
+        <button id="user-list-btn" style="display: none;">등록 사용자 목록</button>
+    </div>
+
+    <div id="input-container" style="display: none;">
+        <h2>아이디 입력</h2>
+        <input type="text" id="companyName" class="input" placeholder="회사명">
+        <input type="text" id="siteName" class="input" placeholder="사이트명">
+        <input type="text" id="userId" class="input" placeholder="아이디">
+        <input type="password" id="userPw" class="input" placeholder="비밀번호">
+        <textarea id="memo" class="input" placeholder="메모"></textarea>
+        <button id="save-id-btn">저장</button>
+        <button id="cancel-btn">취소</button>
+    </div>
+
+    <div id="list-container" style="display: none;">
+        <h2>아이디 목록</h2>
+        <table id="id-table">
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>회사명</th>
+                    <th>사이트명</th>
+                    <th>아이디</th>
+                    <th>비밀번호</th>
+                    <th>메모</th>
+                    <th>선택</th>
+                </tr>
+            </thead>
+            <tbody id="id-list"></tbody>
+        </table>
+        <button id="add-btn">아이디 추가</button>
+        <button id="edit-btn">아이디 수정</button>
+        <button id="delete-btn">아이디 삭제</button>
+    </div>
+
+    <div id="user-list-container" style="display: none;">
+        <h2>등록 사용자 목록</h2>
+        <table id="user-table">
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>사용자 이름</th>
+                    <th>아이디</th>
+                    <th>비밀번호</th>
+                    <th>선택</th>
+                </tr>
+            </thead>
+            <tbody id="user-list"></tbody>
+        </table>
+        <button id="edit-user-btn">사용자 수정</button>
+        <button id="delete-user-btn">사용자 삭제</button>
+        <button id="home-btn">처음</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
